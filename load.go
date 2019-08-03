@@ -46,13 +46,8 @@ func handleShutdown() {
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		sig := <-sigs
-		log("shutting down", sig)
-		setRingColor(ledColorConfig{
-			0,
-			"off",
-			0,
-			"none",
-		})
+		log("shutting down", "|", sig)
+		setRingColor(ledColorConfig{0, "off", 0, "none"})
 		os.Exit(0)
 	}()
 }
