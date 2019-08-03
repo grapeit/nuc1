@@ -58,6 +58,7 @@ func main() {
 	for i, _ := range colorsByLoad {
 		colorsByLoad[i].load *= cores
 	}
+	log("starting", "|", "cores:", cores)
 	loadAverageMonitor()
 }
 
