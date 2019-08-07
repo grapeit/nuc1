@@ -46,7 +46,7 @@ func handleShutdown() {
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		sig := <-sigs
-		log("shutting down", "|", sig)
+		log("shutting down", "|", "signal:", sig)
 		setRingColor(ledColorConfig{0, "off", 0, "none"})
 		os.Exit(0)
 	}()
@@ -58,7 +58,7 @@ func main() {
 	for i, _ := range colorsByLoad {
 		colorsByLoad[i].load *= cores
 	}
-	log("starting", "|", "cores:", cores)
+	log("starting", "|", "cores:", cores, "|", "colors:", colorsByLoad)
 	loadAverageMonitor()
 }
 
