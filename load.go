@@ -16,7 +16,7 @@ import (
 const (
 	ledDriverFile = "/proc/acpi/nuc_led"
 	loadAvgFile = "/proc/loadavg"
-	loadFeedInterval = 6 * time.Second
+	loadFeedInterval = 5 * time.Second
 )
 
 type ledColorConfig struct {
